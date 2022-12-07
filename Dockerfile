@@ -25,8 +25,8 @@ RUN if [ "$TARGETARCH" = "arm64" ] ; then TINI_URL="${TINI_URL}-arm64" TINI_SHA=
     && chmod +x /usr/bin/tini 
 
 # Setup Tomcat for development
-ARG TOMCAT_VERSION=8.5.83
-ARG TOMCAT_SHA="57cbe9608a9c4e88135e5f5480812e8d57690d5f3f6c43a7c05fe647bddb7c3b684bf0fc0efebad399d05e80c6d20c43d5ecdf38ec58f123e6653e443f9054e3"
+ARG TOMCAT_VERSION=8.5.84
+ARG TOMCAT_SHA="b1acc846b10e3641fbbfd5f628f4d77283ca0751ed3841634e1ca873d3d4d71a61d6443ddd65c0f1412ee226af3ecfc4d811fb8191acc1d55592aa0c42e199e8 "
 RUN curl -fL -o /tmp/apache-tomcat.tar.gz \
     https://dlcdn.apache.org/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz \
     && echo "${TOMCAT_SHA}  /tmp/apache-tomcat.tar.gz" | sha512sum -c \
